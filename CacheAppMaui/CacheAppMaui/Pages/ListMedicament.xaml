@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CacheAppMaui.Pages.ListMedicament"
+             Title="ListMedicament">
+    <VerticalStackLayout>
+        <HorizontalStackLayout>
+            <Picker x:Name="PNumber"
+        ItemDisplayBinding="{Binding testNumber}"/>
+            <Button x:Name="BFilter"
+                    Text="search"
+                    Clicked="BFilter_Clicked"/>
+            <Button x:Name="BAll"
+                    Text="All"
+                    Clicked="BAll_Clicked"/>
+            
+        </HorizontalStackLayout>
+        
+        <ListView x:Name="LVMedicaments"
+                  ItemSelected="LVMedicaments_ItemSelected"
+                  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding word}"/>
+                            <Label Text="{Binding Phonetic.text}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>
